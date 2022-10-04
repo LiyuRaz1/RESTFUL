@@ -1,0 +1,58 @@
+{% extends 'base.html'%}
+
+
+{% block title %} Article List {% endblock %}
+
+{% block style %}
+    <style>
+        .link{
+            text-decoration:none;
+            color:black;
+        }
+        .link:hover{
+            text-decoration:none;
+            color:gray;
+        }
+        .{
+            margin: left 50px;
+        }
+
+    </style>
+
+
+{% endblock %} 
+
+{% block body %}
+
+<div class="container mt-4">
+    
+    {% for article in article_list %}
+    
+        <span class="badge rounded-pill bg-success"> Author: {{article.author}}</span>
+        
+        <h1><a class="link" href="{% url 'articles:details' article.slug %}">{{article.title}}<a/></h1>
+    {% endfor %}
+    
+    <br>
+
+    {% include 'Articles/pagination.html' with page=article_list %}
+</div>
+{% endblock %} 
+<br>
+{% block advert %}
+
+    <div class="container mt-4">
+        <h3 >
+            Publish your article for free. <a href="{% url 'articles:add_article' %}">Join</a> us today! <br> <br> 
+            <div class="mx-5">
+            <i> There is no greater agony <br> than bearing an untold <br> story inside you.</i> 
+            </div>
+            
+        </h3>
+
+    </div>
+
+{% endblock advert %}
+
+
+

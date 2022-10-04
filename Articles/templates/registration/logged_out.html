@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+
+{% block title%} Logout {%endblock%}
+
+{% block style %}
+    <style>
+        .login{
+            width:500px;
+            margin:auto; 
+         }
+    </style>
+    
+{% endblock %}
+
+{% block body %}
+<div class="container mt-4 login">
+    <p>You have been logged out, hope to <a href="{% url 'articles:login' %}"> see you</a> back soon</p>
+
+{% endblock %}

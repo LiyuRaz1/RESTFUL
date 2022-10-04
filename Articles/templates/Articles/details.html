@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %} Article List {% endblock %}
+
+{% block style %}
+
+    <style>
+
+    </style>
+
+{% endblock %} 
+
+{% block body %}
+    <div class="container mt-4"> 
+        <h1>{{article.title}}</h1>
+        <h6>Published {{article.published}} by <i>{{article.author}}</i></h6>
+        <br>
+        <p>{{article.description}}</p>
+
+        {% comment %}
+            restricting UPDATE and DELETE buttons to the articles publishers
+        {% endcomment %}
+
+        {% if request.user == article.author %}
+        <a class="btn btn-danger mx-3 mt-3" href="{% url 'articles:delete_article' article.slug %}">Delete</a>
+        <a class="btn btn-success mx-3 mt-3" href="{% url 'articles:update_article' article.slug %}">Update</a>
+        {% endif %}
+    </div>
+{% endblock %}

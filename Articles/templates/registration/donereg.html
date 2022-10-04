@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %} Done {% endblock %}
+
+{% block style %}
+
+    <style>
+
+    </style>
+
+{% endblock %} 
+
+{% block body %}
+    <div class="container mt-4"> 
+        
+        <h3>Welcome, {{new_user.first_name }} {{new_user.last_name}}</h3>
+        <p>Your account has been created, you can <a href="{% url 'articles:login'%}">login Here</a></p>
+        <br>
+        <p>{{article.description}}</p>
+
+    </div>
+{% endblock %}
