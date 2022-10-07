@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-^qi-q9dw48=#vp&3nfodl(-2_vqhukz%o!x@=4ojn7#r@+k^v!
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1' 'https://peaceful-depths-41922.herokuapp.com', config('SERVER', default='127.0.0.1')]
+ALLOWED_HOSTS = ['localhost', '127.0.0.1' 'https://peaceful-depths-41922.herokuapp.com']
 
 
 # Application definition
