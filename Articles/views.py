@@ -14,7 +14,7 @@ def articles_list(request):
     article_list = Article.objects.all().order_by('-published')
     #PAGINATIONS
 
-    paginator = Paginator(article_list, 3)
+    paginator = Paginator(article_list, 6)
     page = request.GET.get('page')
 
     try:
